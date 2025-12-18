@@ -740,22 +740,31 @@ const LinksSection: React.FC<LinksSectionProps> = ({ isMobile }) => {
                             href={link.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`group relative flex items-center gap-4 bg-white/5 border border-white/10 ${isMobile
-                                ? 'p-4 rounded-lg active:bg-white/10'
-                                : `p-6 backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] ${link.border} ${link.shadow}`
+                            className={`group relative bg-white/5 border border-white/10 ${isMobile
+                                ? 'flex items-center gap-4 p-4 rounded-lg active:bg-white/10'
+                                : `flex items-center gap-4 p-6 backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] ${link.border} ${link.shadow}`
                                 }`}
                         >
-                            <div className={`${isMobile ? 'p-2' : 'p-3'} bg-black/40 rounded-lg ${isMobile ? link.iconColor.split(' ')[0] : link.iconColor}`}>
+                            <div className={`${isMobile ? 'p-2' : 'p-3'} bg-black/40 rounded-lg transition-colors duration-300 ${isMobile ? link.iconColor.split(' ')[0] : link.iconColor}`}>
                                 <link.icon size={isMobile ? 20 : 24} />
                             </div>
-                            <span className={`text-white font-medium tracking-wide ${isMobile ? 'text-base' : 'text-lg'}`}>{link.name}</span>
+
+                            {/* Desktop: vertical stack with name + connect */}
+                            {!isMobile && (
+                                <div className="flex flex-col relative z-10">
+                                    <span className="text-white font-medium tracking-wide text-lg group-hover:text-white transition-colors">{link.name}</span>
+                                    <span className="text-white/30 text-xs font-mono tracking-widest uppercase group-hover:text-white/60 transition-colors">Connect</span>
+                                </div>
+                            )}
+
+                            {/* Mobile: just name */}
+                            {isMobile && (
+                                <span className="text-white font-medium tracking-wide text-base">{link.name}</span>
+                            )}
 
                             {/* Desktop only decorations */}
                             {!isMobile && (
                                 <>
-                                    <div className="flex flex-col relative z-10 ml-auto">
-                                        <span className="text-white/30 text-xs font-mono tracking-widest uppercase group-hover:text-white/60 transition-colors">Connect</span>
-                                    </div>
                                     <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-white/0 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-sm pointer-events-none" />
                                     <ExternalLink size={16} className="absolute top-4 right-4 text-white/10 group-hover:text-white/40 transition-colors" />
                                 </>
@@ -792,8 +801,8 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isMobile }) => {
                     <a
                         href="mailto:vormaza.id@gmail.com"
                         className={`group relative w-full flex items-center justify-center gap-3 bg-transparent border border-white text-white font-bold tracking-widest uppercase overflow-hidden transition-all duration-300 ${isMobile
-                                ? 'px-6 py-4 text-sm active:bg-cyan-400 active:text-black'
-                                : 'md:w-auto min-w-[200px] px-8 py-4 hover:border-cyan-400 hover:text-black'
+                            ? 'px-6 py-4 text-sm active:bg-cyan-400 active:text-black'
+                            : 'md:w-auto min-w-[200px] px-8 py-4 hover:border-cyan-400 hover:text-black'
                             }`}
                     >
                         {/* Animated Background Fill - Desktop only */}
@@ -808,8 +817,8 @@ const ContactSection: React.FC<ContactSectionProps> = ({ isMobile }) => {
                     <a
                         href="tel:+6285155365411"
                         className={`group relative w-full flex items-center justify-center gap-3 bg-transparent border border-white/30 text-white font-bold tracking-widest uppercase overflow-hidden transition-all duration-300 ${isMobile
-                                ? 'px-6 py-4 text-sm active:bg-white active:text-black'
-                                : 'md:w-auto min-w-[200px] px-8 py-4 hover:border-white hover:text-black'
+                            ? 'px-6 py-4 text-sm active:bg-white active:text-black'
+                            : 'md:w-auto min-w-[200px] px-8 py-4 hover:border-white hover:text-black'
                             }`}
                     >
                         {/* Animated Background Fill - Desktop only */}
