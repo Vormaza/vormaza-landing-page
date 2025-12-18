@@ -509,7 +509,7 @@ const HeroContent: React.FC<SectionProps> = ({ scrollToLinks }) => {
                 <div className="inline-block animate-fade-in-up pointer-events-auto" style={{ animationDelay: '0.1s' }}>
                     <div className="group relative cursor-help">
                         <span className="py-2 px-4 border border-blue-500/30 rounded-full text-xs font-mono text-blue-300/80 tracking-[0.3em] uppercase bg-blue-900/10 backdrop-blur-sm shadow-[0_0_15px_rgba(59,130,246,0.2)] transition-colors group-hover:bg-blue-900/20 group-hover:border-blue-500/50">
-                            Identity
+                            Vormaza | Profile
                         </span>
                         {/* Tooltip */}
                         <div className="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-max px-4 py-2 bg-black/80 border border-blue-500/20 rounded-lg text-[10px] font-mono text-blue-200/70 tracking-widest backdrop-blur-md opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none shadow-[0_0_20px_rgba(59,130,246,0.1)]">
@@ -565,10 +565,8 @@ const HeroContent: React.FC<SectionProps> = ({ scrollToLinks }) => {
                         <TechQuoteIcon
                             className="absolute -top-4 -left-6 md:-left-10 w-6 h-6 md:w-8 md:h-8 text-cyan-500/20 fill-cyan-500/10 drop-shadow-[0_0_2px_rgba(34,211,238,0.2)]"
                         />
-                        <p className="text-lg md:text-2xl text-white/80 font-light italic leading-relaxed text-center tracking-wide">
-                            A reliable and trustworthy gamer,
-                            <br className="block" />
-                            I wouldn't see a reason to be afraid.
+                        <p className="text-lg md:text-xl text-white/80 font-light leading-relaxed text-center tracking-wide max-w-2xl">
+                            Vormaza is a reliable gamer and digital creator who approaches games as more than entertainment. Through technology, community, and creativity, Vormaza explores identity and meaningful interaction, building digital experiences grounded in trust, curiosity, and long-term vision.
                         </p>
                         <TechQuoteIcon
                             className="absolute -bottom-4 -right-6 md:-right-10 w-6 h-6 md:w-8 md:h-8 text-cyan-500/20 fill-cyan-500/10 rotate-180 drop-shadow-[0_0_2px_rgba(34,211,238,0.2)]"
